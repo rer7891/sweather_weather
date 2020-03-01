@@ -10,7 +10,6 @@ private
 
   def get_json(url)
     response = Faraday.get("https://maps.googleapis.com/#{url}")
-    x = JSON.parse(response.body, symbolize_names: true)
-require "pry"; binding.pry
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
