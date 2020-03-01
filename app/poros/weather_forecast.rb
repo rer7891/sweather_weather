@@ -1,9 +1,11 @@
 class WeatherForecast
+  attr_accessor :id, :currently, :hourly, :daily
+
   def initialize(forecast)
+    @id = nil
     @currently = forecast[:currently]
     @hourly = forecast[:hourly]
     @daily = forecast[:daily]
-require "pry"; binding.pry
   end
 
   def currently
@@ -13,8 +15,8 @@ require "pry"; binding.pry
   end
 
   def daily
-    @daily[:summary][:data].first[:temperatureHigh]
-    @daily[:summary][:data].first[:temperatureLow]
+    @daily[:data].first[:temperatureHigh]
+    @daily[:data].first[:temperatureLow]
     @daily[:summary]
     @daily[:icon]
   end
