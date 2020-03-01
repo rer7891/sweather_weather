@@ -7,7 +7,8 @@ describe "can return weather forcasts" do
 
       get '/api/v1/forecast?location=denver,co'
       expect(response).to have_http_status(:success)
-      forecast = JSON.parse(response.body)["data"]
+      forecast = JSON.parse(response.body)
+require "pry"; binding.pry
     end
   end
 
