@@ -1,4 +1,4 @@
-class Yelp < Forecaster
+class Yelp
   def initialize(details)
     @start_loc = details[0]
     @end_loc = details[1]
