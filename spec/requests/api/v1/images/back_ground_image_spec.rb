@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-require 'rails_helper'
-
 describe "can return a background image" do
 
   describe "GET images#show", :vcr do
