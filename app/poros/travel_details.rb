@@ -12,7 +12,7 @@ class TravelDetails
   def restaurant
     restaurant = {}
     restaurant[:name] = @restaurant.name
-    restaurant[:addres] = [@restaurant.address, ", ", @restaurant.city, ", ", @restaurant.zip, " ", @restaurant.state].join
+    restaurant[:addres] = [@restaurant.address, ", ", @restaurant.city, ", ",@restaurant.state, " ", @restaurant.zip].join
     restaurant
   end
 end
