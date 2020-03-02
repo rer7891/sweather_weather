@@ -47,7 +47,7 @@ class WeatherForecast
       time = hourly[:time] = time.strftime("%I %p")
       hourly = hourly.select { |key, value| @keys.include?(key) }
     end
-    forecast_hourly.first(8)
+    forecast_hourly
   end
 
   def forecast_daily
@@ -56,6 +56,6 @@ class WeatherForecast
     forecast_daily = @daily[:data].map do |daily|
       daily = daily.select { |key, value| @keys.include?(key) }
     end
-    forecast_daily.first(5)
+    forecast_daily
   end
 end
