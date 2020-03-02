@@ -7,7 +7,8 @@ class Yelp < Forecaster
 
   def get_restaurant
     service = YelpService.new
-    service.get_restaurant(travel_details, @food)
+    @restaurant ||= service.get_restaurant(travel_details, @food)
+    YelpDetails.new(@restaurant)
   end
 
   def get_travel_time
@@ -16,6 +17,15 @@ class Yelp < Forecaster
   end
 
   def travel_details
-    GoogleTravelTime.new(get_travel_time)
+    @travel ||= GoogleTravelTime.new(get_travel_time)
+  end
+
+  def get_forecast
+    @forecast ||= DarkskyService.new.get_weather_forecast(travel_details)
+    WeatherForecast.new(@forecast, @end_loc)
+  end
+
+  def final_details
+    TravelDetails.new(travel_details, get_forecast, get_restaurant)
   end
 end
