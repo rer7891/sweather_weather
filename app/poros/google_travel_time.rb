@@ -15,16 +15,6 @@ class GoogleTravelTime
     hour_in_seconds + min_in_seconds
   end
 
-  def hour
-    time = @travel_time.split(" ")
-    time[0].to_i
-  end
-
-  def min
-    time = @travel_time.split(" ")
-    time[1].to_i
-  end
-
   def format_destination
       name = @destination_name.split(" ")
       destination_name = name.delete_at(2)
