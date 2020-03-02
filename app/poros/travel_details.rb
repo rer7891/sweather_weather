@@ -5,7 +5,7 @@ class TravelDetails
     @id = nil
     @end_location = travel.destination_name
     @travel_time = travel.travel_time
-    @forecast = forecast.forecast_hourly[13][:summary]
+    @forecast = forecast.currently[:summary]
     @restaurant = restaurant
   end
 

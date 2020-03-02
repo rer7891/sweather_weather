@@ -2,7 +2,7 @@ class WeatherForecast
   require 'date'
   require 'time'
 
-  attr_reader :id, :location, :time_zone
+  attr_reader :id, :location, :time_zone, :currently
 
   def initialize(forecast, location)
     @id = nil
