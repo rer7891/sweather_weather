@@ -6,8 +6,13 @@ class Yelp < Forecaster
   end
 
   def get_restaurant
+    service = YelpService.new
+    x = service.get_restaurant(get_travel_time, @food)
+require "pry"; binding.pry
+  end
+
+  def get_travel_time
     service = GoogleService.new
     service.get_travel_time(@start_loc, @end_loc)
-    require "pry"; binding.pry
   end
 end
