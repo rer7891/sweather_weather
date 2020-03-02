@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=<UNSPLASH_API_KEY>&per_page=1&query=co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2828'
+      Server:
+      - Cowboy
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=<UNSPLASH_API_KEY>&page=916&per_page=1&query=co>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=<UNSPLASH_API_KEY>&page=2&per_page=1&query=co>;
+        rel="next"
+      X-Total:
+      - '916'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '47'
+      X-Request-Id:
+      - 466a6181-e59e-4d2a-bebd-1006ffca0fe7
+      X-Runtime:
+      - '0.042471'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 varnish
+      - 1.1 varnish
+      - 1.1 vegur
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Mar 2020 01:45:40 GMT
+      Age:
+      - '3918'
+      X-Served-By:
+      - cache-iad2142-IAD, cache-den19621-DEN
+      X-Cache:
+      - MISS, HIT
+      X-Cache-Hits:
+      - 0, 2
+      X-Timer:
+      - S1583113540.409944,VS0,VE0
+      Vary:
+      - Origin, Authorization
+    body:
+      encoding: UTF-8
+      string: '{"total":916,"total_pages":916,"results":[{"id":"qID6NtGCCxY","created_at":"2019-05-25T11:48:21-04:00","updated_at":"2019-10-02T14:02:04-04:00","promoted_at":null,"width":3338,"height":4003,"color":"#0B0303","description":null,"alt_description":"beige
+        concrete building","urls":{"raw":"https://images.unsplash.com/photo-1558799074-d1df9cbd0955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExODE3NX0","full":"https://images.unsplash.com/photo-1558799074-d1df9cbd0955?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjExODE3NX0","regular":"https://images.unsplash.com/photo-1558799074-d1df9cbd0955?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODE3NX0","small":"https://images.unsplash.com/photo-1558799074-d1df9cbd0955?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExODE3NX0","thumb":"https://images.unsplash.com/photo-1558799074-d1df9cbd0955?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjExODE3NX0"},"links":{"self":"https://api.unsplash.com/photos/qID6NtGCCxY","html":"https://unsplash.com/photos/qID6NtGCCxY","download":"https://unsplash.com/photos/qID6NtGCCxY/download","download_location":"https://api.unsplash.com/photos/qID6NtGCCxY/download"},"categories":[],"likes":0,"liked_by_user":false,"current_user_collections":[],"user":{"id":"SJ2_XzVF3D0","updated_at":"2020-02-29T16:01:11-05:00","username":"ericmuhr","name":"Eric
+        Muhr","first_name":"Eric","last_name":"Muhr","twitter_username":"ericmuhr","portfolio_url":"https://www.ericmuhr.club/","bio":"I
+        work in the town where I was born. I\u2019m interested in poetry, the outdoors,
+        and food. Prints available at ericmuhr.club","location":"Newberg, Oregon","links":{"self":"https://api.unsplash.com/users/ericmuhr","html":"https://unsplash.com/@ericmuhr","photos":"https://api.unsplash.com/users/ericmuhr/photos","likes":"https://api.unsplash.com/users/ericmuhr/likes","portfolio":"https://api.unsplash.com/users/ericmuhr/portfolio","following":"https://api.unsplash.com/users/ericmuhr/following","followers":"https://api.unsplash.com/users/ericmuhr/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1523836074263-bfc6e0133db0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32","medium":"https://images.unsplash.com/profile-1523836074263-bfc6e0133db0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64","large":"https://images.unsplash.com/profile-1523836074263-bfc6e0133db0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128"},"instagram_username":"ericmuhr","total_collections":6,"total_likes":1393,"total_photos":675,"accepted_tos":true},"tags":[{"type":"search","title":"architecture"},{"type":"search","title":"building"},{"type":"search","title":"column"}]}]}'
+    http_version: null
+  recorded_at: Mon, 02 Mar 2020 01:45:40 GMT
+recorded_with: VCR 5.1.0
