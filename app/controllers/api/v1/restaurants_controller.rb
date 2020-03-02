@@ -5,6 +5,6 @@ class Api::V1::RestaurantsController < ApplicationController
     food = params[:food]
     details = [start_loc, end_loc, food]
 
-    Yelp.new(details).get_restaurant
+    Yelp.new(details).final_details
   end
 end
