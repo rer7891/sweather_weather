@@ -14,6 +14,8 @@ describe "can return a registered user" do
 
       expect(response).to have_http_status(:success)
       new_user_response = JSON.parse(response.body)
+      user = User.last
+      expect(new_user_response["auth_token"]).to eq(user.auth_token)
     end
 
     it "can get error messages" do
@@ -25,8 +27,9 @@ describe "can return a registered user" do
                 }
       post '/api/v1/users', params: params
 
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(401)
       new_user_response = JSON.parse(response.body)
+      expect(new_user_response["description"]).to eq("User was not registered. Bad credentials.")
     end
   end
 end
