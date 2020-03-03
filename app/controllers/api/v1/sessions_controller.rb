@@ -3,9 +3,9 @@ class Api::V1::SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if login_successful?(user)
       session[:user_id] = user.id
-      render json: {body: {auth_token: user.auth_token}, status: "Success 200."}
+      render json: body: {auth_token: user.auth_token}, status: :created
     else
-      render json: {description: "Login Failed. Bad credentials.", response: "Error 404"}
+      render json: body: {description: "Login Failed. Bad credentials."}, status: :unauthorized
     end
   end
 

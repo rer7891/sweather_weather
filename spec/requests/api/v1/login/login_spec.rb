@@ -27,14 +27,13 @@ describe "can return a user" do
     end
 
     it "can get error messages" do
-
       params = {
                   email: "sogood@example.com",
-                  password: "42634523432"
+                  password: "not good"
                 }
-      post '/api/v1/users', params: params
+      post '/api/v1/sessions', params: params
 
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:error)
       new_user_response = JSON.parse(response.body)
     end
   end
