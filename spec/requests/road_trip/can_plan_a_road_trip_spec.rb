@@ -18,8 +18,8 @@ describe "can return weather forcasts and trip details" do
 
       post '/api/v1/road_trip', params: params
 
-      # expect(response).to have_http_status(:success)
-      # trip = JSON.parse(response.body)
+      expect(response).to have_http_status(:success)
+      trip = JSON.parse(response.body)
     end
   end
 end
