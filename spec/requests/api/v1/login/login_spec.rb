@@ -24,6 +24,8 @@ describe "can return a user" do
 
       expect(response).to have_http_status(:success)
       user_response = JSON.parse(response.body)
+      user = User.last
+      expect(user_response["auth_token"]).to eq(user.auth_token)
     end
 
     it "can get error messages" do
@@ -33,8 +35,9 @@ describe "can return a user" do
                 }
       post '/api/v1/sessions', params: params
 
-      expect(response).to have_http_status(:error)
+      expect(response).to have_http_status(401)
       new_user_response = JSON.parse(response.body)
+      expect(new_user_response["description"]).to eq("Login Failed. Bad credentials.")
     end
   end
 end
