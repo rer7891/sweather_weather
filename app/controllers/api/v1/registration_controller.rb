@@ -2,9 +2,11 @@ class Api::V1::RegistrationController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
-      render json: {auth_token: user.auth_token}, status: :created
+      response.status = 200
+      render json: {auth_token: user.auth_token}
     else
-      render json: {description: "User was not registered. Bad credentials."}, status: :bad_request
+      response.status = 401
+      render json: {description: "User was not registered. Bad credentials."}
     end
   end
 
