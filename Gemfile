@@ -23,7 +23,6 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'faraday'
 gem 'bcrypt', '~> 3.1.7'
-gem 'webpacker', '~> 3.5'
 gem 'fast_jsonapi'
 gem 'figaro'
 
