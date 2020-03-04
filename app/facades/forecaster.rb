@@ -6,16 +6,20 @@ class Forecaster
   end
 
   def get_coordinates
-    location_details = GoogleService.new.geocode(@location)
-    coordinates = location_details[:results]
-    @location_object = GoogleLocation.new(coordinates)
+    GoogleService.new.geocode(@location)
+
+  end
+
+  def location
+    coordinates = get_coordinates[:results]
+    GoogleLocation.new(coordinates)
   end
 
   def get_weather
-    forecast = DarkskyService.new.get_weather(get_coordinates)
+    forecast = DarkskyService.new.get_weather(location)
   end
 
   def weather
-    WeatherForecast.new(get_weather, @location_object.location)
+    WeatherForecast.new(get_weather, location.location)
   end
 end
