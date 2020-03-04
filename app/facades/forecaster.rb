@@ -13,6 +13,9 @@ class Forecaster
 
   def get_weather
     forecast = DarkskyService.new.get_weather(get_coordinates)
-    WeatherForecast.new(forecast, @location_object.location)
+  end
+
+  def weather
+    WeatherForecast.new(get_weather, @location_object.location)
   end
 end
