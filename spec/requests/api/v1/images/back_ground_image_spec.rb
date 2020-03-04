@@ -9,7 +9,8 @@ describe "can return a background image" do
 
       get "/api/v1/backgrounds?location=denver,co"
       expect(response).to have_http_status(:success)
-      image = JSON.parse(response.body)
+      image = JSON.parse(response.body)["data"]["attributes"]
+      expect(image.keys).to eq(["url"])
     end
   end
 end
