@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 04 Mar 2020 01:50:25 GMT
+      - Wed, 04 Mar 2020 02:32:41 GMT
       Pragma:
       - no-cache
       Expires:
@@ -37,7 +37,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=412
+      - gfet4t7; dur=58
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
@@ -69,7 +69,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 04 Mar 2020 01:50:25 GMT
+      - Wed, 04 Mar 2020 02:32:41 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -77,15 +77,15 @@ http_interactions:
       Connection:
       - keep-alive
       X-Authentication-Time:
-      - 610ms
+      - 451ms
       X-Forecast-Api-Calls:
-      - '11'
+      - '15'
       Cache-Control:
       - max-age=86400
       Expires:
-      - Thu, 05 Mar 2020 01:50:25 +0000
+      - Thu, 05 Mar 2020 02:32:41 +0000
       X-Response-Time:
-      - 14.618ms
+      - 18.061ms
       Vary:
       - Accept-Encoding
     body:
