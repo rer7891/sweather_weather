@@ -58,4 +58,8 @@ class WeatherForecast
     end
     forecast_daily.first(5)
   end
+
+  def trip_forecast
+    { temp: @currently[:temperature], summary: @currently[:summary] }
+  end
 end
