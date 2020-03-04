@@ -23,9 +23,8 @@ describe "can return a user" do
       post '/api/v1/sessions', params: params
 
       expect(response).to have_http_status(:success)
-      user_response = JSON.parse(response.body)
-      user = User.last
-      expect(user_response["auth_token"]).to eq(user.auth_token)
+      new_user_response = JSON.parse(response.body)["data"]
+      expect(new_user_response["attributes"]["api_key"]).to eq(@user.auth_token)
     end
 
     it "can get error messages" do
