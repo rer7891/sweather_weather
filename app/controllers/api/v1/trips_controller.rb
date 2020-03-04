@@ -2,7 +2,7 @@ class Api::V1::TripsController < ApplicationController
   def create
 
     if !validate_user
-      TripFacade.new(trip_params)
+      render json: TripsSerializer.new(TripFacade.new(trip_params))
     else
       response.status = 401
       render json: {description: "Unauthorized"}
