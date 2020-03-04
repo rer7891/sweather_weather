@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Weather Forecaster", :vcr do
   before :each do
-    forecaster = Forecaster.new("denver,co")
+    forecaster = ForecasterFacade.new("denver,co")
     forecast = forecaster.get_weather
     @weather = WeatherForecast.new(forecast, "denver,co")
   end
