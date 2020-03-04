@@ -1,6 +1,5 @@
 class Api::V1::TripsController < ApplicationController
   def create
-
     if !validate_user
       render json: TripsSerializer.new(TripFacade.new(trip_params))
     else

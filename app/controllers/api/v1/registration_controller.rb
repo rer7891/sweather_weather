@@ -3,10 +3,10 @@ class Api::V1::RegistrationController < ApplicationController
     user = User.create(user_params)
     if user.save
       response.status = 200
-      render json: {auth_token: user.auth_token}
+      render json: UserSerializer.new(user)
     else
       response.status = 401
-      render json: {description: "User was not registered. Bad credentials."}
+      render json: {description: user.errors.full_messages.to_sentence}
     end
   end
 

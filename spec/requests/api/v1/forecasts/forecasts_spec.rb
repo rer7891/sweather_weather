@@ -8,6 +8,8 @@ describe "can return weather forcasts" do
       get '/api/v1/forecast?location=denver,co'
       expect(response).to have_http_status(:success)
       forecast = JSON.parse(response.body)
+      attributes = ["location", "time_zone", "daily", "currently", "hourly"]
+      expect(forecast["data"]["attributes"].keys).to eq(attributes)
     end
   end
 end

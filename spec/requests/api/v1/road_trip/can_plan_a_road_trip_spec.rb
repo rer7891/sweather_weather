@@ -24,6 +24,7 @@ describe "can return weather forcasts and trip details" do
       expect(trip["data"]["attributes"]["origin"]).to eq("denver,co")
       expect(trip["data"]["attributes"]["trip_duration"]).to eq("1 hour 48 mins")
     end
+
     it "sends an error if a user is not registered" do
 
       params = {
