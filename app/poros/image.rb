@@ -1,8 +1,7 @@
 class Image
-  attr_reader :url, :id
+  attr_reader :url
 
   def initialize(data)
-    @id = nil
     @url = data[:results][0][:urls][:full]
   end
 end
