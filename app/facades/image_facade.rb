@@ -1,7 +1,8 @@
 class ImageFacade
-  attr_reader :location
+  attr_reader :location, :id
 
   def initialize(location)
+    @id = nil
     @location = location
   end
 
@@ -12,7 +13,9 @@ class ImageFacade
   def get_image
     service = UnsplashService.new
     json = service.get_image_json(split_location)
-    Image.new(json)
   end
 
+  def define_image
+    Image.new(get_image)
+  end
 end
